@@ -34,3 +34,5 @@ Home Page: contains the restaurant/bar menu which as food/drinks (for now, just 
 Order Page: the customers(guests) can pick what they want..food/drinks and also place their order and make their payment
 
 We need to make sure that a new user can sign-up using devise
+
+We need to make sure that we have a mobile-first app, which means we should cater to the mobile phones first and then the desktop afterward. this is just CSS with media queries
