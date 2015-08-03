@@ -26,3 +26,11 @@ Things you may want to cover:
 
 Please feel free to use a different markup language if you do not plan to run
 <tt>rake doc:app</tt>.
+
+NOTES:
+Layout of the app, this can edited however many times depending on our updates
+
+Home Page: contains the restaurant/bar menu which as food/drinks (for now, just start with 1 location/restaurant/bar)
+Order Page: the customers(guests) can pick what they want..food/drinks and also place their order and make their payment
+
+We need to make sure that a new user can sign-up using devise
