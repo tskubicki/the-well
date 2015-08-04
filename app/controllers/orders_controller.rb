@@ -25,14 +25,29 @@ class OrdersController < ApplicationController
   end
 
   def destroy
-    @order = Order.deleted
-    render :index
+    @order = Order.find(params[:id])
+    if @order.destroy
+    puts "deleted"
+  else
+    #failure
+  end
+
+  def update
+    @order = Order.find(params[:id])
+    @order.update(order_params)
+    if @user.save
+      puts "Updated"
+    else
+      puts "Update Failed"
   end
 
   def show
     @card = Card.find(params[:id])
   end
 
+  private
+
   def order_params
     params.require(:order).permit[:user_id, :order_id, :table_number]
+  end
 end
