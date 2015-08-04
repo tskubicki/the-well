@@ -1,9 +1,22 @@
 Rails.application.routes.draw do
+  get 'orderitems/index'
+
+  get 'items/index'
+
+  get 'orders/index'
+
+  get 'waiters/index'
+
   devise_for :admins
   devise_for :waiters
   devise_for :users
   
   resources :admins
+  resources :waiters
+  resources :users
+  resources :orders
+  resources :items
+  resources :orderitems
   
   get 'index/create'
 
