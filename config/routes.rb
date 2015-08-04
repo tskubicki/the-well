@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
   devise_for :admins
+  devise_for :waiters
+  devise_for :users
+  
+  resources :admins
+  
   get 'index/create'
 
   get 'index/destroy'
@@ -10,7 +15,7 @@ Rails.application.routes.draw do
 
   get 'order/destroy'
 
-  devise_for :users
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
