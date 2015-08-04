@@ -32,4 +32,7 @@ class OrdersController < ApplicationController
   def show
     @card = Card.find(params[:id])
   end
+
+  def order_params
+    params.require(:order).permit[:user_id, :order_id, :table_number]
 end
