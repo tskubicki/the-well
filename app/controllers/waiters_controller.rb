@@ -1,23 +1,13 @@
 class WaitersController < ApplicationController
-	before_action :authenticate_waiter!
-  def index
-  end
-  
-  def new
-	@order = Order.new()
-  end
-  
-  def edit
+	def index #if admin, get and show all waiters in ERB, otherwise redirect to root
+		if admin_signed_in?
+			@waiters = Waiter.all
+		else
+			redirect_to root_path
+		end
+	end
 	
-  end
-  
-  def show
-  end
-  
-  def update
-  end
-  
-  def destroy
-  end
-  
+	def show
+		@waiter = current_waiter
+	end
 end
