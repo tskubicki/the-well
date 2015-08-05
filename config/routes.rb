@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'welcome/index'
+
   get 'orderitems/index'
 
   get 'items/index'
@@ -12,7 +14,13 @@ Rails.application.routes.draw do
   devise_for :users
   
   get '/users' => 'users#index'
-  get '/users/:id' => 'users#show'
+  get '/user' => 'users#show'
+  
+  get '/waiters' => 'waiters#index'
+  get '/waiter' => 'waiters#show'
+  
+  get '/admins' => 'admins#index'
+  get '/admin' => 'admins#show'
   
   resources :orders
   resources :items
@@ -33,7 +41,7 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  # root 'welcome#index'
+   root 'welcome#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
