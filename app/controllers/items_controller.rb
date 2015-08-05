@@ -39,6 +39,7 @@ class ItemsController < ApplicationController
     else
       puts "failure"
     end
+  end
 
 
 
