@@ -7,7 +7,7 @@ class UsersController < ApplicationController
 		end
 	end
 	
-	def show
+	def show #placeholder page for a user's profile page
 		if current_user
 			@user = current_user.inspect
 		else
