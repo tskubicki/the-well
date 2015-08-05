@@ -13,3 +13,42 @@
  *= require_tree .
  *= require_self
  */
+
+/*this brings the whole body down because the navbar takes up some space at the top*/
+
+#background {
+  background-image: url(bar-background.jpg);
+  background-position: center center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;
+}
+
+.opaque-bar {
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.field, h2 {
+  color: white;
+}
+
+h1 {
+  color: white;
+  display: inline;
+}
+
+.container-fluid {
+  /*margin-top: 5px;*/
+}
+
+.btn-group {
+  float: right;
+}
+
