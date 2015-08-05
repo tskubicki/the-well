@@ -5,7 +5,7 @@ class OrdersController < ApplicationController
       @order = @user.order
     else
       @order = Order.all
-	end
+	 end
     if params[:order_completed].present?
       @order = Order.where(id: current_user.id, order_completed: false)
     end
@@ -30,15 +30,19 @@ class OrdersController < ApplicationController
     puts "deleted"
   else
     #failure
+    end
   end
 
   def update
     @order = Order.find(params[:id])
     @order.update(order_params)
-    if @user.save
+    if @order.save
       puts "Updated"
+      redirect_to waiter_path
     else
       puts "Update Failed"
+      redirect_to waiter_path
+    end
   end
 
   def show
@@ -48,6 +52,6 @@ class OrdersController < ApplicationController
   private
 
   def order_params
-    params.require(:order).permit[:user_id, :order_id, :table_number]
+    params.require(:order).permit(:user_id, :waiter_id, :order_id, :table_number, :order_completed)
   end
 end
