@@ -36,10 +36,12 @@ class OrdersController < ApplicationController
   def update
     @order = Order.find(params[:id])
     @order.update(order_params)
-    if @user.save
+    if @order.save
       puts "Updated"
+      redirect_to waiter_path
     else
       puts "Update Failed"
+      redirect_to waiter_path
     end
   end
 
@@ -50,6 +52,6 @@ class OrdersController < ApplicationController
   private
 
   def order_params
-    params.require(:order).permit[:user_id, :waiter_id, :order_id, :table_number, :order_completed]
+    params.require(:order).permit(:user_id, :waiter_id, :order_id, :table_number, :order_completed)
   end
 end
