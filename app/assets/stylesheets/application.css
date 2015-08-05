@@ -35,13 +35,17 @@
   background-color: rgba(0, 0, 0, 0.5);
 }
 
-.field, h2 {
+h2 {
   color: white;
 }
 
 h1 {
   color: white;
   display: inline;
+}
+
+.email, .password, .remember_me {
+  color: white;
 }
 
 .container-fluid {
