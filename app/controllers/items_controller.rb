@@ -3,7 +3,6 @@ class ItemsController < ApplicationController
     @item = Item.all
   end
 
-
   def new
     @item = Item.new()
   end
@@ -14,16 +13,14 @@ class ItemsController < ApplicationController
     redirect_to @item
   end
 
-  
   def destroy
-   @item = Item.find(params(:id))
+   @item = Item.find(params[:id])
     if @item.destroy
       puts "success"
       redirect_to @item
     else
       puts "failure"
     end
-
   end
 
    def show
@@ -31,7 +28,7 @@ class ItemsController < ApplicationController
   end
 
   def update
-     @item = Item.find(params(:id))
+     @item = Item.find(params[:id])
      @item.update(item_params)
     if @item.save
       puts "success"
@@ -41,13 +38,8 @@ class ItemsController < ApplicationController
     end
   end
 
-
-
-
 private
-
 def item_params
     params.require(:item).permit(:title, :price)
   end
-
 end

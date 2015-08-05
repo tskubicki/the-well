@@ -6,9 +6,9 @@ class OrdersController < ApplicationController
     else
     end
       @order = Order.all
+	end
     if params[:order_completed].present?
       @order = Order.where(id: current_user.id, order_completed: false)
-
     end
   end
 
