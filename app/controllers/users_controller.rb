@@ -6,7 +6,7 @@ class UsersController < ApplicationController
 			redirect_to '/users/sign_in'
 		end
 	end
-	
+
 	def show
 		if current_user
 			@user = current_user.inspect

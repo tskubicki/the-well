@@ -6,7 +6,7 @@ class WaitersController < ApplicationController
 			redirect_to root_path
 		end
 	end
-	
+
 	def show
 		@waiter = current_waiter
 	end

@@ -4,10 +4,11 @@ class OrdersController < ApplicationController
       @order = Order.find params[:order_id]
       @order = @user.order
     else
+    end
       @order = Order.all
     if params[:order_completed].present?
       @order = Order.where(id: current_user.id, order_completed: false)
-    end
+
     end
   end
 
