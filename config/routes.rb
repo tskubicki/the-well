@@ -14,7 +14,13 @@ Rails.application.routes.draw do
   devise_for :users
   
   get '/users' => 'users#index'
-  get '/users/:id' => 'users#show'
+  get '/user' => 'users#show'
+  
+  get '/waiters' => 'waiters#index'
+  get '/waiter' => 'waiters#show'
+  
+  get '/admins' => 'admins#index'
+  get '/admin' => 'admins#show'
   
   resources :orders
   resources :items
