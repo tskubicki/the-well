@@ -1,0 +1,31 @@
+
+
+<% if waiter_signed_in? %>
+  <li>
+  <%= link_to('Logout', destroy_waiter_session_path, :method => :delete) %>        
+  </li>
+<% else %>
+  <li>
+  <%= link_to('Login', new_waiter_session_path)  %>  
+  </li>
+<% end %>
+<br>
+
+<ul>
+  <% @currentorders.each do |x| %>
+    <li>
+      <p>
+        <li><h5>Waiter ID</h5>
+        <%= x.id %>
+      </li>
+      <%= link_to('Complete', orders_path(x), :method => :patch) %>
+
+      <li><h5>Table No</h5>
+        <%= x.table_number %>
+      </li>
+      </p>
+    </li>
+
+    <% end %>
+
+</ul>
