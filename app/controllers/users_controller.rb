@@ -9,7 +9,7 @@ class UsersController < ApplicationController
 	end
 
 	def show #placeholder page for a user's profile page
-		
+		@item = Item.all
 	end
 
 	def create

@@ -1,23 +1,17 @@
 <h1>currently logged in: </h1>
 <%= @user %>
 
-<% if_user_signed_in %>
-
-<li>
-<%= link_to('Logout', destroy_user_session_path, :method => :delete) %>
-</li>
-<% else %>
-<li>
-<%= link_to('Login', new_user_session_path)  %>
-<li>
-<%= link_to('Show' orders_path, :method => :show) %>
-
-</li>
-<% end %>
-<br>
+<ul>
+	<% if current_user %>
+		<li>
+			<%= link_to('Logout', destroy_user_session_path, :method => :delete) %>
+		</li>
+	<% else %>
+		<li>
+			<%= link_to('Login', new_user_session_path)  %>
+		</li>
+	<% end %>
 </ul>
-<% end %>
-
 
 <div class="main-container">
   <div id="border-wrap">
