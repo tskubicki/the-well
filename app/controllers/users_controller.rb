@@ -9,7 +9,9 @@ class UsersController < ApplicationController
 	end
 
 	def show #placeholder page for a user's profile page
-		
+		@admin = current_admin
+		@user = current_user
+		@item = Item.all
 	end
 
 	def create
