@@ -9,6 +9,12 @@ class WaitersController < ApplicationController
 
 
 	def show #placeholder page for a waiter's profile page
+		# See current orders to wait on
+		@currentorders = Order.all
+		
+		# completion on orders table
+		@ordercomplited = Order.where(waiter_id: current_waiter.id)
+
 		if current_waiter
 			@user = current_waiter.inspect
 		else
