@@ -8,6 +8,46 @@ class UsersController < ApplicationController
 	end
 
 	def show #placeholder page for a user's profile page
+		if current_admin
+			@admin = current_admin.inspect
+			@user = User.all
+		end
+	end
+
+	def create
+			if current_admin
+				@user = User.new
+				@user.save
+		  	redirect_to @user
+			end
+	end
+
+	def update
+		if current_admin
+			@user = User.all(params[:id])
+			@user.update(item_params)
+				if @user.save
+			      puts "success"
+			      redirect_to @user
+			    else
+			      puts "failure"
+			    end
+			  end
+			end
+		end
+
+	def delete
+		if current_admin
+				@user = User.find(params[:id])
+		    if @user.destroy
+		    	puts "deleted"
+		  		else
+		    		puts "failure"
+		    	end
+				end
+  	end
+	end
+
 		if current_user
 			@user = current_user.inspect
 		else
