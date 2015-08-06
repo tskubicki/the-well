@@ -15,6 +15,7 @@ Rails.application.routes.draw do
 
   get '/users' => 'users#index'
   get '/user' => 'users#show'
+  delete '/user' => 'users#destroy'
 
   get '/waiters' => 'waiters#index'
   get '/waiter' => 'waiters#show'

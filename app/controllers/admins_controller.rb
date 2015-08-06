@@ -5,9 +5,7 @@ class AdminsController < ApplicationController
 		end
 	end
 
-	def show #placeholder page for a admin's profile page
-		if current_admin
-			@admin = current_admin.inspect
-		end
+	def show #placeholder page for a admin's profile pag
+		@users = User.all
 	end
 end
