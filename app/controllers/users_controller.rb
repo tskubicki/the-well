@@ -2,6 +2,7 @@ class UsersController < ApplicationController
 	def index #if admin, get and show all users in ERB, otherwise redirect to root
 		if admin_signed_in?
 			@users = User.all
+			@item = Item.all
 		else
 			redirect_to '/users/sign_in'
 		end
@@ -50,6 +51,7 @@ class UsersController < ApplicationController
 
 		if current_user
 			@user = current_user.inspect
+			@item = Item.all
 		else
 			redirect_to '/users/sign_in'
 		end
