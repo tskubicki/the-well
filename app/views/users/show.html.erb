@@ -1,2 +1,30 @@
 <h1>currently logged in: </h1>
+<!-- <%= flash[:notice] = "Welcome Back, #{@user}" %> -->
 <%= @user %>
+
+<div class="main-container">
+  <div id="border-wrap">
+    <div id="new-order">
+      <h1>MENU:</h1>
+    </div><!-- new-order title div -->
+      <div id="list-items">
+        <h2>List of items...</h2>
+        <div>
+         <% @item.each do |i| %>
+         <%= i.name %>
+         <%= number_to_currency(i.price) %>
+         <% end %>
+        </div>
+      </div><!-- list-items placeholder div -->
+  </div><!-- border-wrap div around new order -->
+  <div id="border-wrap">
+    <div id="cart">
+      <h1>CART:</h1>
+    </div><!-- card title div -->
+      <div id="order-list">
+        <h2>List of orders...</h2>
+          Order#/Waiter-Bartender,
+          Total Cost (of all orders): $$$ 
+      </div><!-- order-list placeholder div -->
+  </div><!-- border-wrap div around cart -->
+</div>

@@ -7,7 +7,7 @@
   <!-- regular rails stylesheet -->
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <!--Mobile specific meta goodness :)-->
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
   <%= csrf_meta_tags %>
@@ -25,12 +25,15 @@
                 <li><a href="#">Home</a></li>
                 <li><a href="#">Order</a></li>
                 <li><a href="#">Menu</a></li>
-                <li><a href="#">Checkout</a></li>
+                <li><a href="#">Cart</a></li>
+                <li><a href="#">Account</a></li>
               </ul><!-- menu dropdown on the right ul -->
         </div><!-- btn-group div -->
       </div><!-- container-fluid div -->
       <%= yield %>
     </div><!-- opaque-bar div -->
   </div><!-- background div -->
+  <% flash[:notice] if flash[:notice] %>
+  <% flash[:alert] if flash[:alert] %>
 </body>
 </html>

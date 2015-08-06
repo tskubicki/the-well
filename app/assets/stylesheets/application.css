@@ -29,16 +29,22 @@
   position: absolute;
   z-index: -1;
 }
+/*entire body*/
+body {
+  color: white;
+}
 
 .opaque-bar {
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
 }
 
+/*all the h2's*/
 h2 {
   color: white;
 }
 
+/*all the h1's*/
 h1 {
   color: white;
   display: inline;
@@ -54,5 +60,9 @@ h1 {
 
 .btn-group {
   float: right;
+}
+
+.btn {
+  border-radius: 8px;
 }
 
