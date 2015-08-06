@@ -12,20 +12,20 @@ Rails.application.routes.draw do
   devise_for :admins
   devise_for :waiters
   devise_for :users
-  
+
   get '/users' => 'users#index'
   get '/user' => 'users#show'
-  
+
   get '/waiters' => 'waiters#index'
   get '/waiter' => 'waiters#show'
-  
+
   get '/admins' => 'admins#index'
   get '/admin' => 'admins#show'
-  
+
   resources :orders
   resources :items
   resources :orderitems
-  
+
   get 'index/create'
 
   get 'index/destroy'
@@ -36,12 +36,15 @@ Rails.application.routes.draw do
 
   get 'order/destroy'
 
-  
+  get 'welcome/menu'
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
    root 'welcome#index'
+
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

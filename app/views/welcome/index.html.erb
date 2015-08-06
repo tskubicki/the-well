@@ -3,10 +3,10 @@
 
 <%= render 'users#index' if current_user %>
 
-<h2><%= link_to('Login', user_session_path, :method => :login) %></h2>
+<h2><%= link_to('Customer Login', user_session_path, :method => :login) %></h2>
 
-<h2><%= link_to('Login', waiter_session_path, :method => :login) %></h2>
+<h2><%= link_to('Waiter Login', waiter_session_path, :method => :login) %></h2>
 
-<h2><%= link_to('Login', admin_session_path, :method => :login) %></h2>
+<h2><%= link_to('Admin Login', admin_session_path, :method => :login) %></h2>
 
-<h3><%= link_to('Menu', render_session_path :method => :show)%>
+<h3><%= link_to('Menu', welcome_menu_path)%></h3>
