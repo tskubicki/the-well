@@ -2,3 +2,11 @@
 <p style="color:white">Find me in app/views/welcome/index.html.erb</p>
 
 <%= render 'users#index' if current_user %>
+
+<h2><%= link_to('Login', user_session_path, :method => :login) %></h2>
+
+<h2><%= link_to('Login', waiter_session_path, :method => :login) %></h2>
+
+<h2><%= link_to('Login', admin_session_path, :method => :login) %></h2>
+
+<h3><%= link_to('Menu', render_session_path :method => :show)%>

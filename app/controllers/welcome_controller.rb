@@ -8,4 +8,8 @@ class WelcomeController < ApplicationController
 		redirect_to '/admin'
 	end
   end
+
+  def menu
+   @item = Item.all
+  end
 end

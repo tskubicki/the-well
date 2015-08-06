@@ -1,0 +1,20 @@
+<h1>Menu</h1>
+
+<ul>
+  <% @item.each do |x| %>
+    <li>
+      <p>
+        <li>
+        <%= x.id %>
+      </li>
+      <li>
+        <%= x.name %>
+      </li>
+      <li>
+        <%= x.price %>
+      </li>
+      </p>
+    </li>
+    <% end %>
+
+</ul>
