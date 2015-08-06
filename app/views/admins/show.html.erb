@@ -1,7 +1,7 @@
 <h1 style="color:white">ROFL</h1>
 
 
-<ul>
+<ul style="color:white">
   <% @users.each do |x| %>
     <li>
       <p>
@@ -13,11 +13,9 @@
       <li><h5>Email</h5>
         <%= x.email %>
       </li>
-        <%= link_to('Delete', user_path(x), method: :delete) %>
+        <%= link_to("Delete", x, method: :delete) %>
       </p>
     </li>
-
-    link_to 'Complete',
 
 
     <% end %>

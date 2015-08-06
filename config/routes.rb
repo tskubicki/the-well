@@ -13,9 +13,7 @@ Rails.application.routes.draw do
   devise_for :waiters
   devise_for :users
 
-  get '/users' => 'users#index'
-  get '/user' => 'users#show'
-  delete '/user' => 'users#destroy'
+  resources :users, only: [:index, :show, :destroy]
 
   get '/waiters' => 'waiters#index'
   get '/waiter' => 'waiters#show'
