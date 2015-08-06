@@ -14,12 +14,8 @@ Rails.application.routes.draw do
   devise_for :users
 
   resources :users, only: [:index, :show, :destroy]
-
-  get '/waiters' => 'waiters#index'
-  get '/waiter' => 'waiters#show'
-
-  get '/admins' => 'admins#index'
-  get '/admin' => 'admins#show'
+  resources :waiters, only: [:index, :show, :destroy]
+  resources :admins, only: [:index, :show, :destroy]
 
   resources :orders
   resources :items

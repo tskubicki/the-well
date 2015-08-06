@@ -8,9 +8,7 @@ class WaitersController < ApplicationController
 	end
 
 
-	#def show #placeholder page for a waiter's profile page
-		# See current orders to wait on
- def view
+	def show
 		if current_admin
 			@admin = current_admin.inspect
 			@waiters = Waiter.all
@@ -34,9 +32,8 @@ class WaitersController < ApplicationController
 			if @waiters.save
 			  puts "success"
 			  redirect_to @waiters
-			  else
+			else
 			    puts "failure"
-			  end
 			end
 		end
 	end
@@ -46,24 +43,9 @@ class WaitersController < ApplicationController
 				@waiters = Waiter.find(params[:id])
 		    if @waiters.destroy
 		    	puts "deleted"
-		  		else
+		  	else
 		    		puts "failure"
-		    	end
-				end
-  	end
-	end
-
-
-		@currentorders = Order.all
-
-		# completion on orders table
-		@ordercomplited = Order.where(waiter_id: current_waiter.id)
-
-		if current_waiter
-			@user = current_waiter.inspect
-		else
-			redirect_to '/users/sign_in'
+		    end
 		end
-
 	end
 end
