@@ -9,7 +9,8 @@ class WaitersController < ApplicationController
 
 
 	def show
-		if current_admin
+		if current_waiter
+			@currentorders = Order.where(waiter_id: current_waiter.id, order_completed: false)
 			@admin = current_admin.inspect
 			@waiters = Waiter.all
 			# def new
