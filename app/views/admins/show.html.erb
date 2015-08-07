@@ -1,24 +1,55 @@
-<h1 style="color:white">ROFL</h1>
 
 
-<ul style="color:white">
-  <% @users.each do |x| %>
-    <li>
-      <p>
-        <li><h5>User ID</h5>
-        <%= x.id %>
-      </li>
+<div style="margin: 0 auto;width:50%;border: 3px solid white">
+	<h2>Users</h2>
+	<table>
+	  <tr>
+		<th>User ID</th>
+		<th>Email</th> 
+		<th>Delete User</th>
+	  </tr>
+	  <% @users.each do |x| %>
+		  <tr>
+			<td><%= x.id %></td>
+			<td><%= x.email %></td> 
+			<td><%= link_to("Delete", x, method: :delete) %></td>
+		  </tr>
+	  <% end %>
+	</table>
+</div>
 
+<div style="margin: 0 auto;width:50%;border: 3px solid white">
+	<h2>Waiters</h2>
+	<table>
+	  <tr>
+		<th>Waiter ID</th>
+		<th>Email</th> 
+		<th>Delete Waiter</th>
+	  </tr>
+	  <% @waiters.each do |x| %>
+		  <tr>
+			<td><%= x.id %></td>
+			<td><%= x.email %></td> 
+			<td><%= link_to("Delete", x, method: :delete) %></td>
+		  </tr>
+	  <% end %>
+	</table>
+</div>
 
-      <li><h5>Email</h5>
-        <%= x.email %>
-      </li>
-        <%= link_to("Delete", x, method: :delete) %>
-      </p>
-    </li>
-
-
-    <% end %>
-
-</ul>
-
+<div style="margin: 0 auto;width:50%;border: 3px solid white">
+	<h2>Orders</h2>
+	<table>
+	  <tr>
+		<th>Order ID</th>
+		<th>Table</th> 
+		<th>Delete Order</th>
+	  </tr>
+	  <% @orders.each do |x| %>
+		  <tr>
+			<td><%= x.id %></td>
+			<td><%= x.table_number %></td> 
+			<td><%= link_to("Delete", x, method: :delete) %></td>
+		  </tr>
+	  <% end %>
+	</table>
+</div>

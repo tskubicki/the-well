@@ -10,6 +10,7 @@ class AdminsController < ApplicationController
 					@users = User.all
 					@admin = current_admin.inspect
 					@waiters = Waiter.all
+					@orders = Order.all
 				end
 	end
 
