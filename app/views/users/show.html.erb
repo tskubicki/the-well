@@ -31,7 +31,7 @@
             <tbody>
               <% @item.each do |i| %> 
                 <tr>   
-                  <td><%= i.name %></td>
+                  <td><%= link_to i.name, root_path ,id: 'link' %></td>
                   <td><%= number_to_currency(i.price) %></td>
                 </tr><!-- table rows -->
               <% end %>
