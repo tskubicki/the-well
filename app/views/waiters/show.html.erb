@@ -11,18 +11,62 @@
 <% end %>
 <br>
 
-<ul>
+<div class="main-container">
+  <div id="border-wrap">
+    <div id="new-order">
+      <h1>ORDER:</h1>
+    </div><!-- new-order title div -->
+      <div id="list-items">
+        <h2>List of items...</h2>
+        <div id="table-menu">
+          <table>
+            <thead>
+              <tr>
+                <th>Item</th>
+                <th>Price</th>
+              </tr>
+            </thead><!-- table headers -->
+            <tbody>
+              <% @currentorders.each do |x| %>
+    
+      <p>
+        <li><h5>Waiter ID <%= x.id %></h5>
+      </li>
+      <li><h5>Table No <%= x.table_number %></h5> 
+      </li> 
+              <% end %>
+            </tbody><!-- table body -->
+          </table><!-- table for the menu items -->
+        </div><!-- div containing the table -->
+      </div><!-- list-items placeholder div -->
+  </div><!-- border-wrap div around new order -->
+  <div id="border-wrap">
+    <div id="cart">
+      <h1>ORDER CONFIRMATION:</h1>
+    </div><!-- card title div -->
+      <div id="order-list">
+        <h2>List of orders...</h2>
+          Order#/Waiter-Bartender,
+          Total Cost (of all orders): $$$ 
+      </div><!-- order-list placeholder div -->
+  </div><!-- border-wrap div around cart -->
+</div><!-- main-container div -->
+
+<!-- //////////////////////// -->
+
+<!-- <ul>
   <% @currentorders.each do |x| %>
     <li>
       <p>
-        <li><h5>Waiter ID</h5>
-        <%= x.id %>
+        <li><h5>Waiter ID <%= x.id %></h5>
+        
       </li>
+      
 
-
-      <li><h5>Table No</h5>
-        <%= x.table_number %>
+      <li><h5>Table No <%= x.table_number %></h5>
+        
       </li>
+      
         <%= link_to 'Complete', order_path(id: x.id, order: {order_completed: true}), method: :patch  %>
       </p>
     </li>
@@ -31,4 +75,4 @@
 
     <% end %>
 
-</ul>
+</ul> -->
