@@ -14,3 +14,11 @@ Item.create(name:"Cosmopolitan", price: 11.00);
 Item.create(name:"Martini", price: 12.00);
 Item.create(name:"Vodka", price: 9.00);
 Item.create(name:"Rum", price: 8.00);
+
+OrderItem.destroy_all
+OrderItem.create(order_id: 1, item_id: 17);
+OrderItem.create(order_id: 1, item_id: 17);
+OrderItem.create(order_id: 1, item_id: 17);
+
+Order.destroy_all
+Order.create(user_id: 1, waiter_id: 1, table_number: 1);

@@ -46,8 +46,26 @@
     </div><!-- card title div -->
       <div id="order-list">
         <h2>List of orders...</h2>
-          Order#/Waiter-Bartender,
-          Total Cost (of all orders): $$$ 
+        <div id="table-order">
+          <table>
+            <thead>
+              <tr>
+                <th>Order #</th>
+                <th>Item</th>
+                <th>Price</th>
+              </tr>
+            </thead><!-- table headers -->
+            <tbody>
+              <%= @order.items.each do |o| %>
+                <tr>
+                  <td><%= o.name %></td>
+                </tr><!-- table rows -->
+              <% end %>
+            </tbody><!-- table body -->
+          </table><!-- table for the order -->
+        </div><!-- div containing the table -->
+<!--           Order#/Waiter-Bartender,
+          Total Cost (of all orders): $$$  -->
       </div><!-- order-list placeholder div -->
   </div><!-- border-wrap div around cart -->
 </div><!-- main-container div -->

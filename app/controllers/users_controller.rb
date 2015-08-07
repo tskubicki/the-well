@@ -9,7 +9,10 @@ class UsersController < ApplicationController
 	end
 
 	def show #placeholder page for a user's profile page
+		# showing all items
 		@item = Item.all
+		# showing the order with selected items
+		@order = Order.find(1)
 	end
 
 	def create

@@ -47,7 +47,7 @@ ActiveRecord::Schema.define(version: 20150803210225) do
 
   create_table "orders", force: :cascade do |t|
     t.integer  "user_id"
-    t.integer  "bartender_id"
+    t.integer  "waiter_id"
     t.boolean  "order_completed"
     t.integer  "table_number"
     t.datetime "created_at",      null: false
