@@ -13,6 +13,9 @@ class UsersController < ApplicationController
 		@item = Item.all
 		# showing the order with selected items
 		@order = Order.find(1)
+		@items_in_order = Order.find(1).items
+		@order_total = 0
+		@items_in_order.each{|e| @order_total += e.price} 
 	end
 
 	def create
