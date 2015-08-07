@@ -24,6 +24,13 @@
               <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu1">
                 <li><a href="#">Home</a></li>
                 <li><a href="#">Account</a></li>
+                <li><%= link_to('Customer Login', user_session_path, :method => :login) %></li>
+
+                <li><%= link_to('Waiter Login', waiter_session_path, :method => :login) %></li>
+
+                <li><%= link_to('Admin Login', admin_session_path, :method => :login) %></li>
+
+                <li><%= link_to('Menu', welcome_menu_path) %></li>
               </ul><!-- menu dropdown on the right ul -->
         </div><!-- btn-group div -->
       </div><!-- container-fluid div -->
