@@ -20,12 +20,24 @@
     </div><!-- new-order title div -->
       <div id="list-items">
         <h2>List of items...</h2>
-        <div>
-         <% @item.each do |i| %>
-         <%= i.name %>
-         <%= number_to_currency(i.price) %>
-         <% end %>
-        </div>
+        <div id="table-menu">
+          <table>
+            <thead>
+              <tr>
+                <th>Item</th>
+                <th>Price</th>
+              </tr>
+            </thead><!-- table headers -->
+            <tbody>
+              <% @item.each do |i| %> 
+                <tr>   
+                  <td><%= i.name %></td>
+                  <td><%= number_to_currency(i.price) %></td>
+                </tr><!-- table rows -->
+              <% end %>
+            </tbody><!-- table body -->
+          </table><!-- table for the menu items -->
+        </div><!-- div containing the table -->
       </div><!-- list-items placeholder div -->
   </div><!-- border-wrap div around new order -->
   <div id="border-wrap">
@@ -38,4 +50,4 @@
           Total Cost (of all orders): $$$ 
       </div><!-- order-list placeholder div -->
   </div><!-- border-wrap div around cart -->
-</div>
+</div><!-- main-container div -->
