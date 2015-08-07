@@ -1,6 +1,6 @@
 
 
-<div style="margin: 0 auto;width:50%;border: 3px solid white">
+<div style="margin: 0 auto;width:50%;borderitem: 3px solid white">
 	<h2>Users</h2>
 	<table>
 	  <tr>
@@ -18,7 +18,7 @@
 	</table>
 </div>
 
-<div style="margin: 0 auto;width:50%;border: 3px solid white">
+<div style="margin: 0 auto;width:50%;borderitem: 3px solid white">
 	<h2>Waiters</h2>
 	<table>
 	  <tr>
@@ -36,19 +36,39 @@
 	</table>
 </div>
 
-<div style="margin: 0 auto;width:50%;border: 3px solid white">
-	<h2>Orders</h2>
+<div style="margin: 0 auto;width:50%;borderitem: 3px solid white">
+	<h2>Order</h2>
 	<table>
 	  <tr>
 		<th>Order ID</th>
 		<th>Table</th> 
-		<th>Delete Order</th>
+		<th>Delete order</th>
 	  </tr>
 	  <% @orders.each do |x| %>
 		  <tr>
 			<td><%= x.id %></td>
 			<td><%= x.table_number %></td> 
 			<td><%= link_to("Delete", x, method: :delete) %></td>
+		  </tr>
+	  <% end %>
+	</table>
+</div>
+
+<div style="margin: 0 auto;width:50%;borderitem: 3px solid white">
+	<h2>OrderItems</h2>
+	<table>
+	  <tr>
+		<th>Orderitem ID</th>
+		<th>Order ID</th> 
+		<th>Item ID</th> 
+		<th>Delete Orderitem</th>
+	  </tr>
+	  <% @orderitems.each do |x| %>
+		  <tr>
+			<td><%= x.id %></td>
+			<td><%= x.order_id %></td> 
+			<td><%= x.item_id %></td> 
+			<td><%= link_to("Delete", orderitem_path(x), method: :delete, remote: true) %></td>
 		  </tr>
 	  <% end %>
 	</table>

@@ -11,34 +11,37 @@ class OrderitemsController < ApplicationController
   end
 
   def new#GET route - The view for create new entry in the table(user adds item to order)
-  @orderitem = OrderItem.new
+	@orderitem = OrderItem.new
   end
 
   def edit#GET route - the view for editing a specific record in orderitem table
-  @orderitem = OrderItem.find(params[:id])
+	@orderitem = OrderItem.find(params[:id])
   end
 
   def show#GET route - the view for show specific record in orderitem table
-  @orderitem = OrderItem.find(params[:id])
+	@orderitem = OrderItem.find(params[:id])
   end
 
-  def update#PATCH route - editing a specific record in orderitem table
-    @orderitem = OrderItem.find(params[:id])
-    @orderitem.update(orderitem_params)
-    if @orderitem.save
-      puts "Updated"
-    else
-      puts "Update Failed"
-  end
-  end
+def update#PATCH route - editing a specific record in orderitem table
+	@orderitem = OrderItem.find(params[:id])
+	@orderitem.update(orderitem_params)
+	if @orderitem.save
+	  puts "Updated"
+	else
+	  puts "Update Failed"
+	end
+end
 
-  def destroy#destroy orderitem record
-  @orderitem = OrderItem.find(params[:id])
-    if @orderitem.destroy
-    puts "deleted"
-  else
-    puts 'failure'
-  end
-  end
+def destroy#destroy orderitem record AJAX ONLY
+	@orderitem = OrderItem.find(params[:id])
+	respond_to do |format|	
+		format.js
+			if @orderitem.destroy
+				puts "deleted"
+			else
+				puts 'failure'
+			end
+	end
+end
 
 end
