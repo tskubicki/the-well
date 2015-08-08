@@ -29,3 +29,10 @@ input {
   text-align: center;
   left: 50px;
 }
+
+@media all and (max-width: 575px) {
+  #info {
+    margin: 0 auto;
+    width: 100%
+  }
+}
