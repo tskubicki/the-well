@@ -1,12 +1,8 @@
-<h1>Welcome#index</h1>
-<p style="color:white">Find me in app/views/welcome/index.html.erb</p>
-
-<%= render 'users#index' if current_user %>
-
-<h2><%= link_to('Customer Login', user_session_path, :method => :login) %></h2>
-
-<h2><%= link_to('Waiter Login', waiter_session_path, :method => :login) %></h2>
-
-<h2><%= link_to('Admin Login', admin_session_path, :method => :login) %></h2>
-
-<h3><%= link_to('Menu', welcome_menu_path)%></h3>
+<div id="info">
+  <h1 id="text">
+    Welcome to The Well
+  </h1><!-- text div -->
+  <h3 id="text">
+    Where waiting to order is old news!
+  </h3><!-- text div -->
+</div><!-- info div -->
