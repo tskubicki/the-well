@@ -16,5 +16,13 @@
 		$('.delete-waiter').on("ajax:complete", function(e){
 			$(e.currentTarget).parents().eq(1).hide();
 		});
+		
+		$('.delete-orderitem').on("ajax:complete", function(e){
+			$(e.currentTarget).parents().eq(1).hide();
+		});
+		
+		$('.delete-item').on("ajax:complete", function(e){
+			$(e.currentTarget).parents().eq(1).hide();
+		});
 	});
 `

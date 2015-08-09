@@ -11,6 +11,8 @@ class AdminsController < ApplicationController
 					@admin = current_admin.inspect
 					@waiters = Waiter.all
 					@orders = Order.all
+					@orderitems = OrderItem.all
+					@items = Item.all
 				end
 	end
 

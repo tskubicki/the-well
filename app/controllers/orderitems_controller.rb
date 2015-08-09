@@ -33,12 +33,11 @@ class OrderitemsController < ApplicationController
   end
 
   def destroy#destroy orderitem record
-  @orderitem = OrderItem.find(params[:id])
-    if @orderitem.destroy
-    puts "deleted"
-  else
-    puts 'failure'
-  end
+	@orderitem = OrderItem.find(params[:id])
+	respond_to do |format|
+		format.js
+			@orderitem.destroy
+	end
   end
 
 end

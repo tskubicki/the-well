@@ -53,3 +53,43 @@
 	  <% end %>
 	</table>
 </div>
+
+<div style="margin: 0 auto;width:50%;border: 3px solid white">
+	<h2>Items</h2>
+	<table>
+	  <tr>
+		<th>Item ID</th>
+		<th>Name</th> 
+		<th>Price</th>
+		<th>Delete Item</th>
+	  </tr>
+	  <% @items.each do |x| %>
+		  <tr>
+			<td><%= x.id %></td>
+			<td><%= x.name %></td> 
+			<td><%= number_to_currency(x.price) %></td> 
+			<td><%= link_to("Delete", x, method: :delete, remote: true, class: "delete-item") %></td>
+		  </tr>
+	  <% end %>
+	</table>
+</div>
+
+<div style="margin: 0 auto;width:50%;border: 3px solid white">
+	<h2>OrderItems</h2>
+	<table>
+	  <tr>
+		<th>ID</th>
+		<th>Order ID</th> 
+		<th>Item ID</th>
+		<th>Delete Record</th>
+	  </tr>
+	  <% @orderitems.each do |x| %>
+		  <tr>
+			<td><%= x.id %></td>
+			<td><%= x.order_id %></td> 
+			<td><%=  x.item_id %></td> 
+			<td><%= link_to("Delete", x, method: :delete, remote: true, class: "delete-orderitem") %></td>
+		  </tr>
+	  <% end %>
+	</table>
+</div>

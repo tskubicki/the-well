@@ -15,12 +15,10 @@ class ItemsController < ApplicationController
 
   def destroy
    @item = Item.find(params[:id])
-    if @item.destroy
-      puts "success"
-      redirect_to @item
-    else
-      puts "failure"
-    end
+    respond_to do |format|
+		format.js
+			@item.destroy
+	end
   end
 
    def show
