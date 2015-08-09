@@ -4,9 +4,8 @@ class OrdersController < ApplicationController
       @order = Order.find params[:order_id]
       @order = @user.order
     else
-    end
       @order = Order.all
-	 end
+	end
     if params[:order_completed].present?
       @order = Order.where(id: current_user.id, order_completed: false)
     end
@@ -27,11 +26,11 @@ class OrdersController < ApplicationController
 
   def destroy
     @order = Order.find(params[:id])
-    if @order.destroy
-    puts "deleted"
-  else
-    #failure
-    end
+	
+	respond_to do |format|
+		format.js
+			@order.destroy
+	end
   end
 
   def update
@@ -51,8 +50,8 @@ class OrdersController < ApplicationController
   end
 
   private
-
   def order_params
     params.require(:order).permit(:user_id, :waiter_id, :order_id, :table_number, :order_completed)
   end
+  
 end

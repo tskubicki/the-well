@@ -12,7 +12,7 @@
 		  <tr>
 			<td><%= x.id %></td>
 			<td><%= x.email %></td> 
-			<td><%= link_to("Delete", x, method: :delete) %></td>
+			<td><%= link_to("Delete", x, method: :delete, remote: true, class: "delete-user") %></td>
 		  </tr>
 	  <% end %>
 	</table>
@@ -30,7 +30,7 @@
 		  <tr>
 			<td><%= x.id %></td>
 			<td><%= x.email %></td> 
-			<td><%= link_to("Delete", x, method: :delete) %></td>
+			<td><%= link_to("Delete", x, method: :delete, remote: true, class: "delete-waiter") %></td>
 		  </tr>
 	  <% end %>
 	</table>
@@ -48,7 +48,7 @@
 		  <tr>
 			<td><%= x.id %></td>
 			<td><%= x.table_number %></td> 
-			<td><%= link_to("Delete", x, method: :delete) %></td>
+			<td><%= link_to("Delete", x, method: :delete, remote: true, class: "delete-order") %></td>
 		  </tr>
 	  <% end %>
 	</table>
