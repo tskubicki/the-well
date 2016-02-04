@@ -6,11 +6,11 @@ gem 'rails', '4.2.3'
 
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3', group: :development
-group :production do
-  gem 'pg'
-  gem 'rails_12factor'
-  gem 'newrelic_rpm'
-end
+# group :production do
+#   #gem 'pg'
+#   gem 'rails_12factor'
+#   #gem 'newrelic_rpm'
+# end
 
 
 # Use SCSS for stylesheets
